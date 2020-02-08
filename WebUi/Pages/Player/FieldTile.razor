@@ -1,0 +1,15 @@
+﻿@inject IStyled Styled
+
+<div class="@playerFieldTileContainer">
+</div>
+
+@code {
+    private string playerFieldTileContainer;
+    public int Size { get; set; } = 10;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        playerFieldTileContainer = Styled.Css($"display: flex; min-width: {Size}px; min-height: {Size}px; background-color: #b0b0b0; border: 2px solid #000000; ");
+        Console.WriteLine("TZEST");
+    }
+}

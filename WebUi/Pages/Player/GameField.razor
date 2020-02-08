@@ -1,0 +1,50 @@
+﻿@inject IStyled Styled
+
+<Styled @bind-Classname="@gameField">
+    display: grid;
+</Styled>
+<div class="game-field-container">
+    <div>
+        <form>
+            <label for="field-size">Field size</label>
+            <input type="number" class="form-control-range" id="field-size" value="@_fieldSize" @onchange="@onFieldSizeChange" />
+        </form>
+    </div>
+</div>
+<div class="@gameField">
+
+    @for (int i = 0; i < _fieldSize * _fieldSize; i++)
+    {
+        <FieldTile></FieldTile>
+    }
+</div>
+
+@code {
+    private string gameField;
+    private int _fieldSize = 10;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SetGameFieldCss(_fieldSize);
+    }
+
+    private void onFieldSizeChange(ChangeEventArgs e)
+    {
+        int value;
+        if (int.TryParse(e.Value.ToString(), out value))
+        {
+            SetGameFieldCss(value);
+        }
+    }
+
+    private void SetGameFieldCss(int size)
+    {
+        if (size <= 0)
+        {
+            return;
+        }
+        _fieldSize = size;
+        gameField = Styled.Css($"display: grid; grid-template-columns: repeat({size}, 20px);  grid-template-rows: repeat({size}, 20px);");
+    }
+}
