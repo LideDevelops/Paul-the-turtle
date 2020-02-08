@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameManager
+namespace com.theTurtlePaul.PlayerArea.GameManager
 {
     public class GameField
     {

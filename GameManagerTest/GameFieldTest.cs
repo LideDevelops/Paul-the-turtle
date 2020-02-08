@@ -1,4 +1,4 @@
-using GameManager;
+using com.theTurtlePaul.PlayerArea.GameManager;
 using Xunit;
 
 namespace GameManagerTest
