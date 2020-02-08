@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace com.theTurtlePaul.PlayerArea.GameManager
+﻿namespace com.theTurtlePaul.PlayerArea.GameManager
 {
     public class FieldTileImpl : FieldTile
     {
@@ -15,7 +11,7 @@ namespace com.theTurtlePaul.PlayerArea.GameManager
 
         public bool PlaceObject(PlaceableObject objectToPlaceOnTile)
         {
-            if (PlacedObject == null)
+            if (IsTileEmpty())
             {
                 PlacedObject = objectToPlaceOnTile;
                 return true;
@@ -25,7 +21,7 @@ namespace com.theTurtlePaul.PlayerArea.GameManager
 
         public bool RemoveObject()
         {
-            if (PlacedObject == null)
+            if (IsTileEmpty())
             {
                 return false;
             }
@@ -35,7 +31,12 @@ namespace com.theTurtlePaul.PlayerArea.GameManager
 
         public bool CanPlayerMoveOnTile()
         {
-            return (PlacedObject == null) ? true : PlacedObject.CanWalkThrough();
+            return IsTileEmpty() ? true : PlacedObject.CanWalkThrough();
+        }
+
+        public bool IsTileEmpty()
+        {
+            return PlacedObject == null;
         }
     }
 }

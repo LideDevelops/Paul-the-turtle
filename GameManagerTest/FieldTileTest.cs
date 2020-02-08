@@ -48,5 +48,13 @@ namespace GameManagerTest
             testee.RemoveObject();
             Assert.True(testee.CanPlayerMoveOnTile());
         }
+
+        [Fact]
+        public void IsTileEmptyTest()
+        {
+            Assert.True(testee.IsTileEmpty());
+            testee.PlaceObject(objectToPlaceOnTile);
+            Assert.False(testee.IsTileEmpty());
+        }
     }
 }

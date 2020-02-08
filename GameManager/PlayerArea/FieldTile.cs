@@ -5,7 +5,11 @@
         PlaceableObject PlacedObject { get; }
 
         bool PlaceObject(PlaceableObject objectToPlaceOnTile);
+
         bool RemoveObject();
+
         bool CanPlayerMoveOnTile();
+
+        bool IsTileEmpty();
     }
 }
