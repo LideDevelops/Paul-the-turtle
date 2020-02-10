@@ -1,10 +1,10 @@
 ﻿namespace com.theTurtlePaul.PlayerArea.GameManager
 {
-    public class FieldTileImpl : FieldTile
+    public class BasicFieldTile : FieldTile
     {
         public PlaceableObject PlacedObject { get; private set; }
 
-        public FieldTileImpl()
+        public BasicFieldTile()
         {
             PlacedObject = null;
         }
