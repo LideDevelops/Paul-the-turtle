@@ -2,6 +2,8 @@
 {
     public interface PlaceableObject
     {
+        string Name { get; set; }
+
         bool CanWalkThrough();
     }
 }
