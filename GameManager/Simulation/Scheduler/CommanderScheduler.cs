@@ -4,7 +4,7 @@ namespace GameManager.Simulation.Scheduler
 {
     public interface CommanderScheduler
     {
-        void Queue(Commands moveForward);
+        void Queue(Commands command);
 
         IDisposable Subscribe(Action<Commands> func);
     }
