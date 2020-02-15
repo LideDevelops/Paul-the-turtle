@@ -8,6 +8,25 @@ namespace GameManager.Simulation.Scheduler
     {
         MoveForward = 0,
         TurnRight,
-        CheckForward
+        CheckForward,
+        Speak
+    }
+
+    internal interface Command
+    {
+        Commands Command { get; }
+        string Extra { get; }
+    }
+
+    internal class SimpleCommand : Command
+    {
+        public SimpleCommand(Commands command, string extra)
+        {
+            Command = command;
+            Extra = extra;
+        }
+
+        public Commands Command { get; private set; }
+        public string Extra { get; private set; }
     }
 }

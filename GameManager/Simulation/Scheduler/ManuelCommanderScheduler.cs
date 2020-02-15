@@ -7,26 +7,11 @@ namespace GameManager.Simulation.Scheduler
     /// <summary>
     /// Scheduler where you have to call the tick function by yourself.
     /// </summary>
-    public class ManuelCommanderScheduler : CommanderScheduler
+    public class ManuelCommanderScheduler : AbstractScheduler
     {
-        private Queue<Commands> commandQueue;
-        private Subject<Commands> commandObs;
-
-        public ManuelCommanderScheduler(IObservable<int> tickObservable)
+        public ManuelCommanderScheduler(IObservable<int> tickObservable) : base()
         {
-            commandQueue = new Queue<Commands>();
-            commandObs = new Subject<Commands>();
             tickObservable.Subscribe(amountOfTicks => processTicks(amountOfTicks));
-        }
-
-        public void Queue(Commands command)
-        {
-            commandQueue.Enqueue(command);
-        }
-
-        public IDisposable Subscribe(Action<Commands> func)
-        {
-            return commandObs.Subscribe(func);
         }
 
         private void processTicks(int tickAmount)
@@ -35,11 +20,6 @@ namespace GameManager.Simulation.Scheduler
             {
                 Tick();
             }
-        }
-
-        private void Tick()
-        {
-            commandObs.OnNext(commandQueue.Dequeue());
         }
     }
 }

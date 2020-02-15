@@ -31,5 +31,24 @@ namespace GameManagerTest.Simulation.Scheduler
             Assert.Equal(Commands.MoveForward, cmd);
             disposable.Dispose();
         }
+
+        [Fact]
+        public void QueueCommandWithExtraTest()
+        {
+            testee.Queue(Commands.Speak, "Hey");
+            Commands cmd = Commands.TurnRight;
+            string extraVal = "";
+            var disposable = testee.Subscribe((command, val) =>
+            {
+                cmd = command;
+                extraVal = val;
+            });
+            System.Threading.Thread.Sleep(100); // Force current thread to sleep so RX thread can take over
+            // This might not be the smartest solution for testing multithreaded code.
+            // Feel free to change it to a more elegant solution
+            Assert.Equal(Commands.Speak, cmd);
+            Assert.Equal("Hey", extraVal);
+            disposable.Dispose();
+        }
     }
 }

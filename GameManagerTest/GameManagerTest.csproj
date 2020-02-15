@@ -18,8 +18,4 @@
     <ProjectReference Include="..\GameManager\GameManager.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Player\" />
-  </ItemGroup>
-
 </Project>
