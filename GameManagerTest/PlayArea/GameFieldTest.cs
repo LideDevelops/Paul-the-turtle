@@ -11,7 +11,7 @@ namespace GameManagerTest
         private FieldTile tileMock;
         private FieldTileFactory fieldTileFactoryMock;
         private PlaceableObject placeableObjectMock;
-        private GameField testee;
+        private ArrayTiledGameField testee;
 
         public GameFieldTest()
         {
@@ -25,7 +25,7 @@ namespace GameManagerTest
             }
             fieldTileFactoryMock.CreateTileList(fieldSize).Returns(tiles);
 
-            testee = new GameField(fieldSize, fieldTileFactoryMock);
+            testee = new ArrayTiledGameField(fieldSize, fieldTileFactoryMock);
         }
 
         [Fact]
