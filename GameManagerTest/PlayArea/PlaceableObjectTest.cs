@@ -1,8 +1,5 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace GameManagerTest.PlayArea

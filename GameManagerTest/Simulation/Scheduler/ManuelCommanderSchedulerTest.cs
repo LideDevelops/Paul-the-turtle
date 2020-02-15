@@ -1,11 +1,6 @@
 ﻿using GameManager.Simulation.Scheduler;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Reactive;
-using Xunit;
 using System.Reactive.Subjects;
-using System.Threading.Tasks;
+using Xunit;
 
 namespace GameManagerTest.Simulation.Scheduler
 {

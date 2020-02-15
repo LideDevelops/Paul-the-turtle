@@ -1,8 +1,5 @@
 ﻿using GameManager;
 using GameManager.Simulation.Scheduler;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace GameManagerTest.Simulation.Scheduler

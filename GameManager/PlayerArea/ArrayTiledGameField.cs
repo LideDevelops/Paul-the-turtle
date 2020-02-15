@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using com.theTurtlePaul.PlayerArea.GameManager.Factory;
 using System.Linq;
-using com.theTurtlePaul.PlayerArea.GameManager.Factory;
 
 namespace com.theTurtlePaul.PlayerArea.GameManager
 {

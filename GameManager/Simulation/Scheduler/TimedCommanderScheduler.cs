@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reactive.Subjects;
+﻿using GameManager.Simulation.Scheduler;
 using System.Timers;
-using GameManager.Simulation.Scheduler;
 
 namespace GameManager
 {

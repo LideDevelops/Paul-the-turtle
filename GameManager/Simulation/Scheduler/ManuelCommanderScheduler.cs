@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reactive.Subjects;
 
 namespace GameManager.Simulation.Scheduler
 {

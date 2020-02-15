@@ -1,9 +1,5 @@
-﻿using com.theTurtlePaul.PlayerArea.GameManager;
-using com.theTurtlePaul.PlayerArea.GameManager.Factory;
+﻿using com.theTurtlePaul.PlayerArea.GameManager.Factory;
 using GameManager;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace GameManagerTest.PlayArea.Factory
