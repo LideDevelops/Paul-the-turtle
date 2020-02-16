@@ -1,5 +1,6 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager;
+using GameManager.Player;
 using GameManager.Simulation.Scheduler;
 using GameManager.Simulation.Simulator;
 using NSubstitute;
@@ -11,13 +12,13 @@ namespace GameManagerTest.Simulation.SimulatorTest
     {
         private Simulator testee;
         private CommanderScheduler schedulerMock;
-        private Player playerMock;
+        private TurtlePlayer playerMock;
         private GameField gameFieldMock;
 
         public SimulatorTest()
         {
             schedulerMock = Substitute.For<CommanderScheduler>();
-            playerMock = Substitute.For<Player>();
+            playerMock = Substitute.For<TurtlePlayer>();
             gameFieldMock = Substitute.For<GameField>();
 
             testee = new SingleTurtleSimulation(gameFieldMock, playerMock, schedulerMock);

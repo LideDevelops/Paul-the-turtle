@@ -1,10 +1,18 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
+using GameManager.Player;
 using GameManager.Simulation.Scheduler;
 
 namespace GameManager
 {
-    public abstract class BasicTurtel : Player
+    public abstract class BasicTurtel : TurtlePlayer
     {
+        public string Name { get; set; }
+
+        public virtual bool CanWalkThrough()
+        {
+            return true;
+        }
+
         public void StartTurtleMain(GameField gameField, CommanderScheduler scheduler)
         {
             TurtleMain();

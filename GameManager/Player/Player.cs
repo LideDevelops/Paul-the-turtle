@@ -1,12 +1,12 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager.Simulation.Scheduler;
 
-namespace GameManager
+namespace GameManager.Player
 {
-    public interface Player
+    public interface TurtlePlayer : PlaceableObject
     {
-        void TurtleMain();
-
         void StartTurtleMain(GameField gameField, CommanderScheduler scheduler);
+
+        void TurtleMain();
     }
 }

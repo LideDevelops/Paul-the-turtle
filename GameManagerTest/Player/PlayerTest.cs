@@ -1,5 +1,6 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager;
+using GameManager.Player;
 using GameManager.Simulation.Scheduler;
 using NSubstitute;
 using Xunit;
@@ -8,7 +9,7 @@ namespace GameManagerTest
 {
     public class PlayerTest
     {
-        private Player testee;
+        private TurtlePlayer testee;
         private GameField gameFieldMock;
         private CommanderScheduler commanderSchedulerMock;
 
@@ -29,6 +30,8 @@ namespace GameManagerTest
         [Fact]
         public void MoveForwardTest()
         {
+            testee.MoveForward();
+            
         }
     }
 }
