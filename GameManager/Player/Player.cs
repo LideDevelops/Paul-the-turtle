@@ -8,5 +8,7 @@ namespace GameManager.Player
         void StartTurtleMain(GameField gameField, CommanderScheduler scheduler);
 
         void TurtleMain();
+
+        void MoveForward();
     }
 }

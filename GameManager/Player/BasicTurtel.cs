@@ -13,6 +13,11 @@ namespace GameManager
             return true;
         }
 
+        public void MoveForward()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void StartTurtleMain(GameField gameField, CommanderScheduler scheduler)
         {
             TurtleMain();
