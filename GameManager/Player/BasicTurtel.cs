@@ -1,6 +1,5 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager.Player;
-using GameManager.Simulation.Scheduler;
 
 namespace GameManager
 {
@@ -18,7 +17,7 @@ namespace GameManager
             throw new System.NotImplementedException();
         }
 
-        public void StartTurtleMain(GameField gameField, CommanderScheduler scheduler)
+        public void StartTurtleMain(GameField gameField)
         {
             TurtleMain();
         }
