@@ -25,5 +25,14 @@ namespace GameManagerTest.PlayArea
             testee.Name = "Wall";
             Assert.Equal("Wall", testee.Name);
         }
+
+        [Fact]
+        public void MovePlaceableObjectToPositionTest()
+        {
+            testee.PlaceAt(0, 0, 0);
+            Assert.Equal(0, testee.Transform.Position.X);
+            Assert.Equal(0, testee.Transform.Position.Y);
+            Assert.Equal(0, testee.Transform.Position.Z);
+        }
     }
 }

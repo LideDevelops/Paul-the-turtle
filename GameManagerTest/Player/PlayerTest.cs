@@ -28,6 +28,7 @@ namespace GameManagerTest
         public void MoveForwardTest()
         {
             testee.MoveForward();
+            Assert.False(true);
         }
     }
 }

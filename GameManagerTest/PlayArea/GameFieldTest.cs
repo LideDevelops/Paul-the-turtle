@@ -13,6 +13,8 @@ namespace GameManagerTest
         private PlaceableObject placeableObjectMock;
         private ArrayTiledGameField testee;
 
+        //TODO: Make gamefield observable for change
+
         public GameFieldTest()
         {
             placeableObjectMock = Substitute.For<PlaceableObject>();
