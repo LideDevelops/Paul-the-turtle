@@ -9,5 +9,7 @@ namespace GameManager.Player
         void TurtleMain();
 
         void MoveForward();
+
+        void TurnRight();
     }
 }

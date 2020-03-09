@@ -1,6 +1,7 @@
 ﻿using com.theTurtlePaul.PlayerArea.GameManager;
 using GameManager.Player;
 using GameManager.PlayerArea;
+using GameManager.TurtleExceptions;
 
 namespace GameManager
 {
@@ -12,9 +13,10 @@ namespace GameManager
 
         public Transform Transform { get; }
 
-        public BasicTurtel()
+        public BasicTurtel(GameField gameField)
         {
             Transform = new Transform2DGrid();
+            _gameField = gameField;
         }
 
         public virtual bool CanWalkThrough()
@@ -24,7 +26,23 @@ namespace GameManager
 
         public void MoveForward()
         {
-            _gameField.PlaceObjectOnTile(0, 0, this);
+            var oldPosition = Transform.Position;
+            Transform.PlaceAt(Transform.GetNormalizedForwardPosition());
+            if (Transform.Position.Y < 0 || Transform.Position.X < 0)
+            {
+                Transform.PlaceAt(oldPosition);
+                throw new CantWalkThereException(Transform.Position.Y, Transform.Position.X);
+            }
+            if (_gameField.PlaceObjectOnTile((uint)Transform.Position.X, (uint)Transform.Position.Y, this) == false)
+            {
+                Transform.PlaceAt(oldPosition);
+                throw new CantWalkThereException(Transform.Position.Y, Transform.Position.X);
+            }
+        }
+
+        public void TurnRight()
+        {
+            Transform.RotateAroundY(90);
         }
 
         public void PlaceAt(int x, int y, int z)

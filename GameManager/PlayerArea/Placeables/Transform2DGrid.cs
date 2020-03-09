@@ -24,11 +24,37 @@ namespace GameManager
         public Position Position { get; private set; }
         public Rotation Rotation { get; private set; }
 
+        public Position GetNormalizedForwardPosition()
+        {
+            switch (Rotation.DegreeRotatedOnY)
+            {
+                case 0:
+                    return new Position(Position.X, Position.Y + 1, Position.Z);
+
+                case 90:
+                    return new Position(Position.X + 1, Position.Y, Position.Z);
+
+                case 180:
+                    return new Position(Position.X, Position.Y - 1, Position.Z);
+
+                case 270:
+                    return new Position(Position.X - 1, Position.Y, Position.Z);
+
+                default:
+                    return Position;
+            }
+        }
+
         public void PlaceAt(int x, int y, int z)
         {
             Position.X = x;
             Position.Y = y;
             Position.Z = z;
+        }
+
+        public void PlaceAt(Position position)
+        {
+            PlaceAt(position.X, position.Y, position.Z);
         }
 
         public void RotateAroundX(float degree)

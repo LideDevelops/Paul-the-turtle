@@ -13,5 +13,9 @@
         void RotateAroundZ(float degree);
 
         void PlaceAt(int x, int y, int z);
+
+        void PlaceAt(Position position);
+
+        Position GetNormalizedForwardPosition();
     }
 }

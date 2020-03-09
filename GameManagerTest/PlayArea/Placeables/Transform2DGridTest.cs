@@ -25,5 +25,19 @@ namespace GameManagerTest.PlayArea.Placeables
             testee.RotateAroundY(95);
             Assert.Equal(180, testee.Rotation.DegreeRotatedOnY);
         }
+
+        [Fact]
+        public void GetForwardGridPositionTest()
+        {
+            Assert.Equal(new Position(0, 1, 0), testee.GetNormalizedForwardPosition());
+            testee.RotateAroundY(90);
+            Assert.Equal(new Position(1, 0, 0), testee.GetNormalizedForwardPosition());
+            testee.RotateAroundY(90);
+            Assert.Equal(new Position(0, -1, 0), testee.GetNormalizedForwardPosition());
+            testee.RotateAroundY(90);
+            Assert.Equal(new Position(-1, 0, 0), testee.GetNormalizedForwardPosition());
+            testee.PlaceAt(testee.GetNormalizedForwardPosition());
+            Assert.Equal(new Position(-2, 0, 0), testee.GetNormalizedForwardPosition());
+        }
     }
 }
